@@ -8,7 +8,6 @@ class PageNotFoundController extends Controller
 {
     public function indexAction(): Response
     {
-        $this->response->setStatusCode(404);
-        return $this->response->setContent('Страница не найдена!');
+        return $this->renderTwig('page_not_found.html.twig', [], 404);
     }
 }

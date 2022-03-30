@@ -2,14 +2,16 @@
 
 namespace App;
 
+use Exception;
+
 class App
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public static function init(): void
     {
-        $router = new Router();
+        $router = Container::getRouter();
         $response = $router->execute();
         $response->send();
     }

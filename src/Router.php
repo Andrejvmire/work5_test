@@ -3,6 +3,7 @@
 namespace App;
 
 use Exception;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class Router
@@ -29,5 +30,10 @@ class Router
         } else {
             throw new Exception("Контроллер $controller или его метод $method не определены");
         }
+    }
+
+    public static function redirect(string $url, int $status = 302, array $headers = []): Response
+    {
+        return new RedirectResponse($url, $status, $headers);
     }
 }

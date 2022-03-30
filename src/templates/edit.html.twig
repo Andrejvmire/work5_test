@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <form class="row justify-content-center" method="POST">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">Фамилия Имя Отчество:</label>
+                <input type="text" class="form-control" id="nameInput" name="full_name" placeholder="ФИО"
+                       value="{{ data.full_name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="passInput" class="form-label">Пароль:</label>
+                <input type="password" class="form-control" id="passInput" name="password" required>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-md-3">
+                    <a href="/user/login" class="btn btn-secondary" role="button">Отменить</a>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary" role="button">Изменить</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

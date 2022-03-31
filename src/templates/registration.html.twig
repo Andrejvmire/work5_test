@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title_prefix %}Регистрация{% endblock %}
+
+{% block main %}
+    <form class="row justify-content-center" method="POST">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">Адрес email:</label>
+                <input type="email" class="form-control" name="email" id="emailInput" placeholder="name@example.com"
+                       value="{{ data.email }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">Фамилия Имя Отчество:</label>
+                <input type="text" class="form-control" id="nameInput" name="full_name" placeholder="ФИО"
+                       value="{{ data.full_name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="loginInput" class="form-label">Логин:</label>
+                <input type="text" class="form-control" id="loginInput" name="name" value="{{ data.name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="passInput" class="form-label">Пароль:</label>
+                <input type="password" class="form-control" id="passInput" name="password" required>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-md-5">
+                    <a href="/user/login" class="btn btn-link" role="button">Я уже зарегестрирован</a>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
